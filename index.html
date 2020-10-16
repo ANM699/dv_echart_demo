@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+
+</head>
+
+<body>
+    <header>
+        <h1>数据可视化</h1>
+        <div class="showTime"></div>
+    </header>
+    <section class="main">
+        <!-- 左 -->
+        <div class="column">
+            <div class="panel bar">
+                <h2>柱形图</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel bar">
+                <h2>柱形图</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel bar">
+                <h2>柱形图</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+        <!-- 中 -->
+        <div class="column">
+            <!-- 数字模块 -->
+            <div class="no">
+                <div class="no-hd">
+                    <ul>
+                        <li>3829382</li>
+                        <li>9382873</li>
+                    </ul>
+                </div>
+                <div class="no-bd">
+                    <ul>
+                        <li>数字一</li>
+                        <li>数字二</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 地图模块 -->
+            <div class="map">
+                <div class="map1"></div>
+                <div class="map2"></div>
+                <div class="map3"></div>
+                <div class="chart">地图模块</div>
+            </div>
+        </div>
+        <!-- 右 -->
+        <div class="column">
+            <div class="panel bar">
+                <h2>柱形图</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel bar">
+                <h2>柱形图</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel bar">
+                <h2>柱形图</h2>
+                <div class="chart">图表</div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+    </section>
+    <script src="./js/flexible.js"></script>
+    <script>
+        var t = null;
+        time();
+
+        function time() {
+            clearTimeout(t);
+            var dt = new Date();
+            var year = dt.getFullYear();
+            var month = dt.getMonth() + 1;
+            var day = dt.getDate();
+            var h = dt.getHours();
+            var m = dt.getMinutes();
+            var s = dt.getSeconds();
+            var str = '当前时间：' + year + '年' + month + '月' + day + '日 ' + h + '时' + m + '分' + s + '秒';
+            document.querySelector('.showTime').innerHTML = str;
+            t = setTimeout(time, 1000);
+        }
+    </script>
+</body>
+
+</html>
